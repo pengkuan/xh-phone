@@ -1,13 +1,12 @@
 <template>
     <div>
-        <xh-header label="运营数据"></xh-header>
         <div v-if="isHighest">
             <div id="bar1" style="width: 100%;height: 400px;"></div>
             <div id="bar2" style="width: 100%;height: 400px;"></div>
             <div id="bar3" style="width: 100%;height: 400px;"></div>
             <div id="bar4" style="width: 100%;height: 400px;"></div>
         </div>
-        <div else>暂只支持总代查看运营数据</div>
+        <div v-else>暂只支持总代查看运营数据</div>
         
     </div>
 </template>

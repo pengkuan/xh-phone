@@ -5,20 +5,20 @@
     </transition>
     <tabbar>
       <tabbar-item selected link="/index">
-        <img slot="icon" src="../assets/demo/icon_nav_button.png">
-        <span slot="label">Wechat</span>
+        <img slot="icon" src="../assets/images/home_fill_light.png">
+        <span slot="label">运营数据</span>
       </tabbar-item>
-      <tabbar-item link="/agent/index">
-        <img slot="icon" src="../assets/demo/icon_nav_msg.png">
-        <span slot="label">Message</span>
+      <tabbar-item link="/agent/nav">
+        <img slot="icon" src="../assets/images/friend_light.png">
+        <span slot="label">代理</span>
       </tabbar-item>
-      <tabbar-item  link="/player/index">
-        <img slot="icon" src="../assets/demo/icon_nav_article.png">
-        <span slot="label">Explore</span>
+      <tabbar-item  link="/player/nav">
+        <img slot="icon" src="../assets/images/friend_light.png">
+        <span slot="label">玩家</span>
       </tabbar-item>
-      <tabbar-item link="/user/setPwd">
-        <img slot="icon" src="../assets/demo/icon_nav_cell.png">
-        <span slot="label">News</span>
+      <tabbar-item link="/user/nav">
+        <img slot="icon" src="../assets/images/settings_light.png">
+        <span slot="label">个人中心</span>
       </tabbar-item>
     </tabbar>
   </div>

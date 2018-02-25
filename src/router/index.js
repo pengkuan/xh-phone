@@ -25,37 +25,34 @@ let router = new Router({
             component: home,
             redirect: '/index',
             leaf: true, // 只有一个节点
-            menuShow: true,
             iconCls: 'iconfont icon-home_fill_light', // 图标样式class
             children: [
-                {path: '/index', component: index, name: '运营数据', menuShow: true}
+                {path: '/index', component: index, name: '运营数据'}
             ]
         },
         {
             path: '/',
             name: '代理管理', 
-            // name: '测试', 
             component: home,
-            menuShow: true,
             iconCls: 'iconfont icon-friend_light', // 图标样式class
             children: [
-                {path: '/agent/index', component: agent.index, name: '代理列表', menuShow: true},
-                {path: '/agent/add', component: agent.add, name: 'agentAdd', menuShow: false},
-                {path: '/agent/card', component: agent.card, name: 'agentCard', menuShow: false},
-                {path: '/agent/cardRecord', component: agent.cardRecord, name: '代理发卡记录', menuShow: true},
+                {path: '/agent/nav', component: agent.nav, name: 'agentNav'},
+                {path: '/agent/index', component: agent.index, name: '代理列表'},
+                {path: '/agent/add', component: agent.add, name: 'agentAdd'},
+                {path: '/agent/card', component: agent.card, name: 'agentCard'},
+                {path: '/agent/cardRecord', component: agent.cardRecord, name: '代理发卡记录'},
             ]
         },
         {
             path: '/',
             name: '玩家管理', 
-            // name: '测试', 
             component: home,
-            menuShow: true,
             iconCls: 'iconfont icon-friend_light', // 图标样式class
             children: [
-                {path: '/player/index', component: player.index, name: '玩家列表', menuShow: true},
-                {path: '/player/card', component: player.card, name: 'playerCard', menuShow: false},
-                {path: '/player/cardRecord', component: player.cardRecord, name: '玩家发卡记录', menuShow: true},
+                {path: '/player/nav', component: player.nav, name: 'playerNav'},
+                {path: '/player/index', component: player.index, name: '玩家列表'},
+                {path: '/player/card', component: player.card, name: 'playerCard'},
+                {path: '/player/cardRecord', component: player.cardRecord, name: '玩家发卡记录'},
             ]
         },
         {
@@ -66,7 +63,8 @@ let router = new Router({
             menuShow: true,
             iconCls: 'iconfont icon-settings_light', // 图标样式class
             children: [
-                {path: '/user/setPwd', component: userCenter.setPwd, name: '修改密码', menuShow: true},
+                {path: '/user/nav', component: userCenter.nav, name: 'userNav'},
+                {path: '/user/setPwd', component: userCenter.setPwd, name: '修改密码'},
             ]
         },
     ]
