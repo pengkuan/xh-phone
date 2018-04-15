@@ -19,5 +19,6 @@ Vue.component('xhHeader',xhHeader)
 /* eslint-disable no-new */
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app-box')

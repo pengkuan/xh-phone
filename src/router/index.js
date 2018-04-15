@@ -70,7 +70,6 @@ let router = new Router({
     ]
 })
 router.beforeEach((to, from, next) => {
-    
     if (to.path.startsWith('/login')) {
         next()
     } else {

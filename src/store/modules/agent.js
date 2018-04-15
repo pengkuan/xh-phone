@@ -5,8 +5,6 @@ import * as types from '../mutation-types'
 // initial state
 const state = {
     agentLevels: [],
-    categoryList:[],
-    channelList:[],
     myCard: 0,
 }
 

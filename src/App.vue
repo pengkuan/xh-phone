@@ -1,12 +1,25 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+  	<loading v-model="isLoading"></loading>
+    <transition>
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
+import {Loading} from 'vux'
+import {mapGetters} from 'vuex'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    Loading
+  },
+  computed: {
+    ...mapGetters({
+      isLoading: 'common/isloading',
+    })
+  }
 }
 </script>
 

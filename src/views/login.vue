@@ -1,25 +1,24 @@
 <template>
-    <p>5555</p>
-    <!-- <el-form ref="AccountFrom" :model="account" :rules="rules" label-position="left" label-width="0px"
-             class="demo-ruleForm login-container">
-        <h3 class="title">新河麻将管理后台</h3>
-        <el-form-item prop="uname">
-            <el-input type="text" v-model="account.uname" @keyup.13.native="enter($event)" auto-complete="off" placeholder="账号"></el-input>
-        </el-form-item>
-        <el-form-item prop="pwd">
-            <el-input type="password" v-model="account.pwd" @keyup.13.native="enter($event)" auto-complete="off" placeholder="密码"></el-input>
-        </el-form-item>
-        <el-form-item style="width:100%;">
-            <el-button type="primary" style="width:100%;" @click.native.prevent="handleLogin" :loading="logining">登录</el-button>
-        </el-form-item>
-    </el-form> -->
+    <div>
+        <br><br><br><br><br>
+        <x-input title="账号" v-model="account.uname"></x-input>
+        <x-input title="密码" type="password" v-model="account.pwd"></x-input>
+        <br><br>
+        <x-button type="primary" @click="handleLogin">登录</x-button>
+    </div>
 </template>
 
 <script>
 import api from '@/api/index'
 import md5 from 'js-md5'
 import { mapGetters } from 'vuex'
+import { Group,XButton,XInput } from 'vux'
 export default {
+    components: {
+        Group,
+        XButton,
+        XInput
+    },
     data() {
         return {
             logining: false,
@@ -38,32 +37,16 @@ export default {
             checked: true
         }
     },
-    computed:{
-        ...mapGetters({
-            'loginInfo':'userInfo/loginInfo',
-            'session':'userInfo/session',
-        }),
-    },
+    // computed:{
+    //     ...mapGetters({
+    //         'loginInfo':'common/isloading',
+    //     }),
+    // },
     mounted(){
-        // this.init()
-        // this._Util.delCookie('uname')
-        this.handleLogin()
+
     },
     methods: {
-        init(){
-            /*** if记住密码 ***/
-            // let uName = this._Util.getCookie('LoginName')
-            // let uPwd = this._Util.getCookie('LoginPwd')
-            // if(uName){
-            //     this.account.uname = uName
-            //     this.account.pwd = uPwd
-            // }
-        },
-        enter(ev){
-            this.handleLogin()
-        },
         handleLogin() {
-
             let user = {
                 uname : this.account.uname,
                 pwd : md5(this.account.pwd)
@@ -73,10 +56,10 @@ export default {
             }
             api.Login(loginParams).then(res => {
                 this.logining = false
-                // if (res.code != '0') {
-                //     this.$message(res.msg)
-                //     return
-                // }
+                if (res.code != '0') {
+                    this.$message(res.msg)
+                    return
+                }
                 this._Util.setCookie('xh-session',res.user.session)
                 this._Util.setCookie('xh-level',res.user.level)
                 this._Util.setCookie('xh-uname',res.user.uname)
