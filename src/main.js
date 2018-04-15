@@ -7,14 +7,14 @@ import router from './router'
 import '@/assets/fonts/iconfont.css'
 import store from './store/index'
 import Util from '@/util/index'
-import Config from '@/config/index.js'
 import xhHeader from '@/base/xh_header'
-
+import  { ToastPlugin } from 'vux'
+Vue.use(ToastPlugin)
 FastClick.attach(document.body)
 
 Vue.config.productionTip = false
-Vue.prototype._Util = Util
-Vue.prototype._Config = Config
+Vue.prototype.Util = Util
+Vue.prototype.Config = Config
 Vue.component('xhHeader',xhHeader)
 /* eslint-disable no-new */
 new Vue({

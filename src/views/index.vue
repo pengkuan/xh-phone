@@ -17,7 +17,7 @@ export default {
     name: '',
     data() {
         return {
-            isHighest:this._Util.getCookie('xh-level') == '0',
+            isHighest:this.Util.getCookie('xh-level') == '0',
             getCard:[],//进卡
             agentBuyCard:[],//代理购卡
             playerBuyCard:[],//玩家购卡

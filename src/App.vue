@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-  	<loading v-model="isLoading"></loading>
+  	<loading v-model="loading.status" :text='loading.text' ></loading>
     <transition>
       <router-view></router-view>
     </transition>
@@ -8,16 +8,17 @@
 </template>
 
 <script>
-import {Loading} from 'vux'
+import {Loading,Toast} from 'vux'
 import {mapGetters} from 'vuex'
 export default {
   name: 'app',
   components: {
-    Loading
+    Loading,
+    Toast
   },
   computed: {
     ...mapGetters({
-      isLoading: 'common/isloading',
+      loading: 'common/isloading',
     })
   }
 }

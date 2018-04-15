@@ -5,7 +5,10 @@ import * as types from '../mutation-types.js'
  
 // initial state
 const state = {
-   loading:false
+   loading:{
+        status:false,
+        text:''
+   }
 }
 
 // getters
@@ -20,9 +23,9 @@ const actions = {
 
 // mutations 
 const mutations = {
-    // [types.SET_SESSION](state,  val ) {
-    //     state.session = val
-    // } 
+    [types.SET_LOADING](state,  val ) {
+        state.loading = val
+    } 
 }
 
 export default {
